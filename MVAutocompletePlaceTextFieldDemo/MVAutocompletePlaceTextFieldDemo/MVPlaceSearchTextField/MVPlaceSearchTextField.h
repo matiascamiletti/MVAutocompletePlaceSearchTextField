@@ -14,7 +14,7 @@
 #import "PlaceObject.h"
 
 @protocol PlaceSearchTextFieldDelegate <NSObject>
--(void)placeSearchResponseForSelectedPlace:(NSMutableDictionary*)responseDict;
+-(void)placeSearchResponseForSelectedPlace:(PlaceObject *)placeObj;
 -(void)placeSearchWillShowResult;
 -(void)placeSearchWillHideResult;
 -(void)placeSearchResultCell:(UITableViewCell*)cell withPlaceObject:(PlaceObject*)placeObject atIndex:(NSInteger)index;

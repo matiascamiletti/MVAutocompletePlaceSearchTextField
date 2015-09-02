@@ -19,8 +19,28 @@
     }
     return self;
 }
+-(id)initWithPlaceId:(NSString *)identifier andName:(NSString *)name{
+    self = [super init];
+    if (self) {
+        [self setPlaceID:identifier];
+        [self setPlaceName:name];
+    }
+    return self;
+}
 
 -(NSString *)autocompleteString{
     return self.placeName;
 }
+-(void)getGMSPlaceByCallback:(MVPlaceObjectCallback)callback {
+    [[[GMSPlacesClient alloc] init] lookUpPlaceID:self.placeID callback:^(GMSPlace *place, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Place Details error %@", [error localizedDescription]);
+            return;
+        }
+        
+        callback(place);
+    }];
+}
+
+
 @end

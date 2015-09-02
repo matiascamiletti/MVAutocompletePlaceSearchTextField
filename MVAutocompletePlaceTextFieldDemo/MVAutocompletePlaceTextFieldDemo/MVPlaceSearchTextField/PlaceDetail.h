@@ -10,7 +10,7 @@
 
 @protocol PlaceDetailDelegate <NSObject>
 
--(void)placeDetailForReferance:(NSString*)referance didFinishWithResult:(NSMutableDictionary*)resultDict;
+-(void)placeDetailForReferance:(NSString*)referance didFinishWithResult:(PlaceObject*)resultDict;
 @end
 
 @interface PlaceDetail : NSObject{

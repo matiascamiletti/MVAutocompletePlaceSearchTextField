@@ -27,7 +27,7 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     dispatch_async(queue, ^{
         NSMutableDictionary *aResultDict=[self stringWithUrl:aUrl].mutableCopy;
-        [_delegate placeDetailForReferance:strReferance didFinishWithResult:aResultDict];
+        //[_delegate placeDetailForReferance:strReferance didFinishWithResult:aResultDict];
     });
     
 }

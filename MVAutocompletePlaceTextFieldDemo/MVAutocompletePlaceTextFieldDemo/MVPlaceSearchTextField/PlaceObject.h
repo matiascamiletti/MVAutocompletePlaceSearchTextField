@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "MLPAutoCompletionObject.h"
+@import GoogleMaps;
+
+typedef void (^MVPlaceObjectCallback)(GMSPlace * place);
+
 @interface PlaceObject : NSObject<MLPAutoCompletionObject>
-@property(nonatomic,strong)NSDictionary *userInfo;
+
+@property (nonatomic, strong) NSString *placeID;;
+
+- (id)initWithPlaceId:(NSString *)identifier andName:(NSString *)name;
 - (id)initWithPlaceName:(NSString *)name;
+
+-(void)getGMSPlaceByCallback:(MVPlaceObjectCallback)callback;
 
 @end
